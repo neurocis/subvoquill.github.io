@@ -1,0 +1,31 @@
+name: Deploy Staging Site
+on:
+  push:
+    branches: ["staging"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging
+        uses: actions/checkout@v4
+      
+      # Add build steps here if using a static site generator
+      # Example for Jekyll:
+      # - name: Set up Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: '3.2'
+      # - name: Install dependencies
+      #   run: bundle install
+      # - name: Build Jekyll site
+      #   run: bundle exec jekyll build --destination _site
+
+      - name: Deploy to Staging
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: . # or _site if using Jekyll/Hugo
+          destination_dir: staging-preview # Deploys to /staging in gh-pages
+          force_orphan: false   
