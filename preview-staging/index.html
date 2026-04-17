@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subvoquill — Your Silent Voice</title>
+  <meta name="description" content="Subvoquill is a neck-wearable device that detects silent subvocal speech, giving you a second communications channel to any app or AI agent.">
+  <meta property="og:title" content="Subvoquill — Your Silent Voice">
+  <meta property="og:description" content="Neural interface wearable for silent speech. Communicate without speaking.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://subvoquill.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Subvoquill — Your Silent Voice">
+  <meta name="twitter:description" content="Neural interface wearable for silent speech. Communicate without speaking.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236C63FF'/%3E%3Cstop offset='100%25' stop-color='%2300D4FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Cpath d='M35 45 Q42 30 50 45 Q58 60 65 45' fill='none' stroke='url(%23g)' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">◆</span> Subvoquill
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#compatibility">Compatibility</a></li>
+        <li><a href="#specs">Specs</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#newsletter" class="nav-cta">Get Updates</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge fade-in">
+          <span class="pulse"></span>
+          Neural Interface Technology
+        </div>
+        <h1 class="fade-in fade-in-delay-1">Speak Without<br><span class="gradient-text">Speaking</span></h1>
+        <p class="fade-in fade-in-delay-2">Subvoquill detects your silent subvocal speech through a sleek neck-wearable, giving you a second communications channel to any app or AI agent — without uttering a word.</p>
+        <div class="hero-buttons fade-in fade-in-delay-3">
+          <a href="#newsletter" class="btn btn-primary">Reserve Yours →</a>
+          <a href="#technology" class="btn btn-secondary">Explore Technology</a>
+        </div>
+        <div class="hero-stats fade-in fade-in-delay-4">
+          <div class="stat-item">
+            <div class="stat-value">8</div>
+            <div class="stat-label">EMG Sensors</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">12hr</div>
+            <div class="stat-label">Battery Life</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">97%</div>
+            <div class="stat-label">Accuracy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">28g</div>
+            <div class="stat-label">Weight</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-in">
+        <div class="waveform-container">
+          <div class="wave-ring"></div>
+          <div class="wave-ring"></div>
+          <div class="wave-ring"></div>
+          <div class="wave-ring"></div>
+          <div class="device-core">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 28C12 28 16 16 24 16C32 16 36 28 36 28" stroke="url(#coreGrad)" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M16 30C16 30 19 22 24 22C29 22 32 30 32 30" stroke="url(#coreGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+              <circle cx="24" cy="34" r="2" fill="url(#coreGrad)" opacity="0.8"/>
+              <defs>
+                <linearGradient id="coreGrad" x1="12" y1="16" x2="36" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#6C63FF"/>
+                  <stop offset="1" stop-color="#00D4FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="waveform-bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology -->
+  <section id="technology">
+    <div class="container">
+      <div class="section-label fade-in"><span class="label-dot"></span> Technology</div>
+      <h2 class="fade-in">Pioneering Neural Sensing<br>for <span class="gradient-text">Silent Speech</span></h2>
+      <p class="fade-in">Subvoquill captures the subtle electromyography signals from your throat muscles when you subvocalize — the neural patterns your brain sends even when you speak silently to yourself.</p>
+      <div class="tech-grid">
+        <div class="tech-card fade-in">
+          <div class="tech-icon">📡</div>
+          <h3>EMG Sensor Array</h3>
+          <p>An 8-sensor electromyography array wraps comfortably around your neck, capturing subvocal muscle activations with medical-grade precision.</p>
+          <ul class="tech-features">
+            <li>8 high-fidelity EMG sensors</li>
+            <li>Adaptive noise cancellation</li>
+            <li>Medical-grade signal quality</li>
+            <li>Self-calibrating fit</li>
+          </ul>
+        </div>
+        <div class="tech-card fade-in fade-in-delay-1">
+          <div class="tech-icon">🧠</div>
+          <h3>Neural Decoding Engine</h3>
+          <p>On-device AI processes EMG signals in real-time, decoding subvocal patterns into text commands with 97% accuracy — no cloud required.</p>
+          <ul class="tech-features">
+            <li>On-device neural network</li>
+            <li>Sub-50ms latency</li>
+            <li>Personalized voice model</li>
+            <li>Continuous learning</li>
+          </ul>
+        </div>
+        <div class="tech-card fade-in fade-in-delay-2">
+          <div class="tech-icon">🔗</div>
+          <h3>Universal Agent Link</h3>
+          <p>Route your silent commands to any connected app or AI agent via BLE 5.3. Your second channel, your choice of destination.</p>
+          <ul class="tech-features">
+            <li>BLE 5.3 low-energy link</li>
+            <li>Open agent protocol</li>
+            <li>Multi-agent routing</li>
+            <li>End-to-end encryption</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-label fade-in"><span class="label-dot"></span> How It Works</div>
+      <h2 class="fade-in">Three Steps to <span class="gradient-text">Silent Command</span></h2>
+      <p class="fade-in">From thought to action in milliseconds. Subvoquill bridges the gap between your inner voice and the digital world.</p>
+      <div class="process-grid">
+        <div class="process-step fade-in">
+          <div class="process-number">01</div>
+          <div class="process-icon">🎵</div>
+          <h3>Wear</h3>
+          <p>Slip on the lightweight neck band. It self-calibrates to your unique physiology in under 30 seconds, forming a comfortable neural link.</p>
+        </div>
+        <div class="process-step fade-in fade-in-delay-1">
+          <div class="process-number">02</div>
+          <div class="process-icon">💭</div>
+          <h3>Think</h3>
+          <p>Subvocalize naturally — silently mouth words or think in sentences. The EMG sensors detect the subtle muscle activations your brain sends to your vocal cords.</p>
+        </div>
+        <div class="process-step fade-in fade-in-delay-2">
+          <div class="process-number">03</div>
+          <div class="process-icon">⚡</div>
+          <h3>Connect</h3>
+          <p>Your silent command is decoded and routed to your chosen app or AI agent via the Subvoquill companion app. No voice. No hands. Just thought.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terminal Demo -->
+  <section class="terminal-section" id="terminal">
+    <div class="container">
+      <div class="section-label fade-in"><span class="label-dot"></span> Live Demo</div>
+      <h2 class="fade-in" style="text-align:center">See It in <span class="gradient-text">Action</span></h2>
+      <p class="fade-in" style="text-align:center;margin-left:auto;margin-right:auto;">Watch how Subvoquill translates silent speech into real-time commands.</p>
+      <div class="terminal-wrapper fade-in">
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">subvoquill — silent session</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="terminal-line" data-delay="400">
+              <span class="terminal-prompt">$ </span><span class="terminal-command">subvoquill listen --mode silent</span>
+            </div>
+            <div class="terminal-line" data-delay="1200">
+              <span class="terminal-success">✓ Neural link established</span>
+            </div>
+            <div class="terminal-line" data-delay="2000">
+              <span class="terminal-success">✓ EMG calibration complete</span>
+            </div>
+            <div class="terminal-line" data-delay="3200">
+              <span class="terminal-prompt">$ </span><span class="terminal-command">subvoquill send --agent "claude" "Schedule meeting for 3pm"</span>
+            </div>
+            <div class="terminal-line" data-delay="4400">
+              <span class="terminal-success">✓ Command decoded: "Schedule meeting for 3pm"</span>
+            </div>
+            <div class="terminal-line" data-delay="5200">
+              <span class="terminal-success">✓ Routed to claude</span>
+            </div>
+            <div class="terminal-line" data-delay="6200">
+              <span class="terminal-output">  → Meeting scheduled: Today 3:00 PM</span>
+            </div>
+            <div class="terminal-line" data-delay="7400">
+              <span class="terminal-prompt">$ </span><span class="terminal-command">subvoquill send --agent "home" "Turn on the lights"</span>
+            </div>
+            <div class="terminal-line" data-delay="8600">
+              <span class="terminal-success">✓ Command decoded: "Turn on the lights"</span>
+            </div>
+            <div class="terminal-line" data-delay="9400">
+              <span class="terminal-success">✓ Routed to home</span>
+            </div>
+            <div class="terminal-line" data-delay="10200">
+              <span class="terminal-output">  → Living room lights: ON</span>
+            </div>
+            <div class="terminal-line" data-delay="11200">
+              <span class="terminal-prompt">$ </span><span class="terminal-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compatibility -->
+  <section id="compatibility">
+    <div class="container">
+      <div class="section-label fade-in"><span class="label-dot"></span> Compatibility</div>
+      <h2 class="fade-in">Your Silent Voice,<br><span class="gradient-text">Any Agent</span></h2>
+      <p class="fade-in">Subvoquill routes your subvocal commands to the AI agent or app of your choice. One silent channel, infinite destinations.</p>
+      <div class="compat-grid">
+        <div class="compat-card fade-in">
+          <span class="compat-icon">🤖</span>
+          <h4>ChatGPT</h4>
+          <p>OpenAI Assistant</p>
+        </div>
+        <div class="compat-card fade-in fade-in-delay-1">
+          <span class="compat-icon">🧠</span>
+          <h4>Claude</h4>
+          <p>Anthropic Assistant</p>
+        </div>
+        <div class="compat-card fade-in fade-in-delay-2">
+          <span class="compat-icon">💎</span>
+          <h4>Gemini</h4>
+          <p>Google Assistant</p>
+        </div>
+        <div class="compat-card fade-in fade-in-delay-3">
+          <span class="compat-icon">🏠</span>
+          <h4>Smart Home</h4>
+          <p>Home Assistant, etc.</p>
+        </div>
+        <div class="compat-card fade-in">
+          <span class="compat-icon">🎯</span>
+          <h4>Custom Agents</h4>
+          <p>Any Open Protocol</p>
+        </div>
+        <div class="compat-card fade-in fade-in-delay-1">
+          <span class="compat-icon">📱</span>
+          <h4>Siri / Alexa</h4>
+          <p>Voice Assistants</p>
+        </div>
+        <div class="compat-card fade-in fade-in-delay-2">
+          <span class="compat-icon">🔧</span>
+          <h4>Agent Zero</h4>
+          <p>Autonomous Agent</p>
+        </div>
+        <div class="compat-card fade-in fade-in-delay-3">
+          <span class="compat-icon">🔗</span>
+          <h4>LangChain</h4>
+          <p>Agent Framework</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section id="specs">
+    <div class="container">
+      <div class="section-label fade-in"><span class="label-dot"></span> Specifications</div>
+      <h2 class="fade-in">Engineered for <span class="gradient-text">Everyday</span></h2>
+      <p class="fade-in">Ultra-lightweight, all-day comfort, built to disappear into your daily routine.</p>
+      <div class="specs-grid">
+        <div class="spec-item fade-in">
+          <div class="spec-label">Sensors</div>
+          <div class="spec-value">8-EMG</div>
+          <div class="spec-detail">High-fidelity array</div>
+        </div>
+        <div class="spec-item fade-in fade-in-delay-1">
+          <div class="spec-label">Battery</div>
+          <div class="spec-value">12hr</div>
+          <div class="spec-detail">All-day use</div>
+        </div>
+        <div class="spec-item fade-in fade-in-delay-2">
+          <div class="spec-label">Weight</div>
+          <div class="spec-value">28g</div>
+          <div class="spec-detail">Lighter than a headset</div>
+        </div>
+        <div class="spec-item fade-in">
+          <div class="spec-label">Connectivity</div>
+          <div class="spec-value">BLE 5.3</div>
+          <div class="spec-detail">Ultra-low energy</div>
+        </div>
+        <div class="spec-item fade-in fade-in-delay-1">
+          <div class="spec-label">Charging</div>
+          <div class="spec-value">USB-C</div>
+          <div class="spec-detail">Fast charge 45min</div>
+        </div>
+        <div class="spec-item fade-in fade-in-delay-2">
+          <div class="spec-label">Latency</div>
+          <div class="spec-value">&lt;50ms</div>
+          <div class="spec-detail">Real-time response</div>
+        </div>
+        <div class="spec-item fade-in">
+          <div class="spec-label">Accuracy</div>
+          <div class="spec-value">97%</div>
+          <div class="spec-detail">After personalization</div>
+        </div>
+        <div class="spec-item fade-in fade-in-delay-1">
+          <div class="spec-label">Water Resistance</div>
+          <div class="spec-value">IP54</div>
+          <div class="spec-detail">Sweat & splash proof</div>
+        </div>
+        <div class="spec-item fade-in fade-in-delay-2">
+          <div class="spec-label">Encryption</div>
+          <div class="spec-value">E2E</div>
+          <div class="spec-detail">AES-256 standard</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-label fade-in"><span class="label-dot"></span> FAQ</div>
+      <h2 class="fade-in" style="text-align:center">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <p class="fade-in" style="text-align:center;margin-left:auto;margin-right:auto">Everything you need to know about Subvoquill and subvocal speech technology.</p>
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            What is subvocal speech?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Subvocal speech, also known as silent speech, refers to the minute muscle activations in your throat and mouth that occur when you think about speaking or silently mouth words. Your brain sends neural signals to your vocal muscles even when no sound is produced. Subvoquill's EMG sensors detect these subtle electrical patterns and decode them into commands.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-1">
+          <button class="faq-question" aria-expanded="false">
+            Can other people hear what I'm subvocalizing?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              No. Subvocal speech produces no audible sound. Subvoquill captures only the electrical signals from your muscles — it's completely silent to anyone around you. Your silent commands remain private, secured with end-to-end AES-256 encryption between the device and your chosen agent.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-2">
+          <button class="faq-question" aria-expanded="false">
+            How accurate is the subvocal recognition?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Subvoquill achieves 97% accuracy after a brief personalization period (typically 10-15 minutes of training). The on-device neural network continuously adapts to your unique physiology, improving over time. Initial out-of-box accuracy is approximately 85%, which rapidly improves with regular use.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-3">
+          <button class="faq-question" aria-expanded="false">
+            Does it work if I'm moving or walking?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Subvoquill features adaptive noise cancellation that filters out motion artifacts in real-time. While extreme physical activity may reduce accuracy slightly, normal walking, sitting, and everyday movements have minimal impact on performance.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-4">
+          <button class="faq-question" aria-expanded="false">
+            What about privacy and data security?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Privacy is foundational to Subvoquill. All neural decoding happens on-device — your raw EMG data never leaves the wearable. Only decoded text commands are transmitted over an encrypted BLE link. We use AES-256 end-to-end encryption, and no subvocal data is stored on our servers. You own your neural data, period.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            Which apps and agents can I connect to?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Subvoquill uses an open agent protocol, meaning it can route commands to virtually any app or AI agent. Out of the box, we support ChatGPT, Claude, Gemini, Siri, Alexa, Home Assistant, Agent Zero, and LangChain-based agents. Our SDK allows developers to integrate any service that accepts text input.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="newsletter">
+    <div class="container">
+      <div class="section-label fade-in"><span class="label-dot"></span> Stay Updated</div>
+      <h2 class="fade-in">Be First to <span class="gradient-text">Speak Silently</span></h2>
+      <p class="fade-in">Join the waitlist for early access and product updates.</p>
+      <form class="newsletter-form fade-in" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Joined!'; this.querySelector('input').disabled=true; this.querySelector('button').disabled=true;">
+        <input type="email" placeholder="you@email.com" required>
+        <button type="submit">Join Waitlist</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="logo-icon">◆</span> Subvoquill
+          </a>
+          <p>Your silent voice. A neck-wearable neural interface for subvocal speech detection and silent command.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="GitHub">⌘</a>
+            <a href="#" aria-label="Discord">◆</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#specs">Specifications</a></li>
+            <li><a href="#compatibility">Compatibility</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Developer SDK</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Subvoquill. All rights reserved.</span>
+        <span>
+          <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Cookies</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

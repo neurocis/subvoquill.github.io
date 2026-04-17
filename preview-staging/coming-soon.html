@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subvoquill — Coming Soon</title>
+  <meta name="description" content="Subvoquill: Your Silent Voice. A neck-wearable neural interface for subvocal speech detection. Coming soon.">
+  <meta property="og:title" content="Subvoquill — Coming Soon">
+  <meta property="og:description" content="Neural interface wearable for silent speech. Communicate without speaking.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://subvoquill.github.io">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236C63FF'/%3E%3Cstop offset='100%25' stop-color='%2300D4FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Cpath d='M35 45 Q42 30 50 45 Q58 60 65 45' fill='none' stroke='url(%23g)' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0B0D17;
+      --purple: #6C63FF;
+      --cyan: #00D4FF;
+      --gradient: linear-gradient(135deg, #6C63FF, #00D4FF);
+      --gradient-text: linear-gradient(90deg, #6C63FF, #00D4FF);
+      --text-primary: #E2E4F0;
+      --text-secondary: #9B9BB5;
+      --text-dim: #6B6B8A;
+      --border-glass: rgba(108, 99, 255, 0.15);
+      --bg-glass: rgba(108, 99, 255, 0.05);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Animated background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at 30% 40%, rgba(108, 99, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 60%, rgba(0, 212, 255, 0.07) 0%, transparent 50%);
+      animation: bgShift 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(2%, -2%) rotate(3deg); }
+    }
+
+    .splash {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 40px 24px;
+      max-width: 600px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 48px;
+      animation: fadeIn 1s ease;
+    }
+
+    .logo-icon {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.75rem;
+    }
+
+    /* Waveform animation */
+    .waveform {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 48px;
+      animation: fadeIn 1s ease 0.2s both;
+    }
+
+    .waveform .bar {
+      width: 5px;
+      border-radius: 5px;
+      background: var(--gradient);
+      animation: barPulse 1.4s ease-in-out infinite;
+    }
+
+    .waveform .bar:nth-child(1)  { height: 16px; animation-delay: 0s; }
+    .waveform .bar:nth-child(2)  { height: 28px; animation-delay: 0.08s; }
+    .waveform .bar:nth-child(3)  { height: 44px; animation-delay: 0.16s; }
+    .waveform .bar:nth-child(4)  { height: 56px; animation-delay: 0.24s; }
+    .waveform .bar:nth-child(5)  { height: 68px; animation-delay: 0.32s; }
+    .waveform .bar:nth-child(6)  { height: 56px; animation-delay: 0.40s; }
+    .waveform .bar:nth-child(7)  { height: 68px; animation-delay: 0.48s; }
+    .waveform .bar:nth-child(8)  { height: 56px; animation-delay: 0.56s; }
+    .waveform .bar:nth-child(9)  { height: 44px; animation-delay: 0.64s; }
+    .waveform .bar:nth-child(10) { height: 56px; animation-delay: 0.72s; }
+    .waveform .bar:nth-child(11) { height: 44px; animation-delay: 0.80s; }
+    .waveform .bar:nth-child(12) { height: 28px; animation-delay: 0.88s; }
+    .waveform .bar:nth-child(13) { height: 16px; animation-delay: 0.96s; }
+
+    @keyframes barPulse {
+      0%, 100% { transform: scaleY(0.35); opacity: 0.4; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      animation: fadeIn 1s ease 0.4s both;
+    }
+
+    .gradient-text {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease 0.6s both;
+    }
+
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      color: var(--cyan);
+      margin-bottom: 36px;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease 0.5s both;
+    }
+
+    .coming-soon-badge .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--cyan);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(0, 212, 255, 0); }
+    }
+
+    .email-form {
+      display: flex;
+      gap: 12px;
+      max-width: 400px;
+      margin: 0 auto 32px;
+      animation: fadeIn 1s ease 0.8s both;
+    }
+
+    .email-form input {
+      flex: 1;
+      padding: 14px 18px;
+      background: rgba(17, 19, 37, 0.7);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .email-form input::placeholder { color: var(--text-dim); }
+
+    .email-form input:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+    }
+
+    .email-form button {
+      padding: 14px 24px;
+      background: var(--gradient);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-family: inherit;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .email-form button:hover {
+      box-shadow: 0 0 30px rgba(108, 99, 255, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .social {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      animation: fadeIn 1s ease 1s both;
+    }
+
+    .social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.3s ease;
+    }
+
+    .social a:hover {
+      border-color: var(--purple);
+      color: var(--cyan);
+    }
+
+    .footer-text {
+      margin-top: 48px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      animation: fadeIn 1s ease 1.2s both;
+    }
+
+    .footer-text a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .footer-text a:hover { color: var(--cyan); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2.2rem; }
+      .email-form { flex-direction: column; }
+      .waveform .bar:nth-child(n+10) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="splash">
+    <div class="logo">
+      <span class="logo-icon">◆</span> Subvoquill
+    </div>
+
+    <div class="waveform">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <h1>Your Silent<br><span class="gradient-text">Voice</span></h1>
+
+    <div class="coming-soon-badge">
+      <span class="pulse"></span>
+      Coming Soon
+    </div>
+
+    <p class="tagline">A neck-wearable neural interface that detects subvocal speech — giving you a second communications channel to any app or AI agent.</p>
+
+    <form class="email-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Joined!'; this.querySelector('input').disabled=true; this.querySelector('button').disabled=true;">
+      <input type="email" placeholder="you@email.com" required>
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <div class="social">
+      <a href="#" aria-label="Twitter">𝕏</a>
+      <a href="#" aria-label="GitHub">⌘</a>
+      <a href="#" aria-label="Discord">◆</a>
+    </div>
+
+    <div class="footer-text">
+      © 2026 Subvoquill · <a href="https://www.agent-zero.ai/" target="_blank" rel="noopener">Project sponsor: Agent Zero</a>
+    </div>
+  </div>
+</body>
+</html>

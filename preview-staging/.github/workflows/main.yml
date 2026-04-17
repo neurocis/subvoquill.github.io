@@ -1,0 +1,43 @@
+name: Copy Branch to Subfolder
+
+on:
+  push:
+    branches: [ staging ]
+
+permissions:
+  contents: write
+
+jobs:
+  copy-to-subfolder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Check out main
+        run: git checkout main
+
+      - name: Copy staging contents into preview-staging
+        run: |
+          git fetch origin staging
+          git worktree add /tmp/staging-worktree origin/staging
+          mkdir -p preview-staging
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='preview-staging' \
+            /tmp/staging-worktree/ preview-staging/
+          git worktree remove /tmp/staging-worktree --force
+
+      - name: Commit and push
+        run: |
+          git add preview-staging
+          if ! git diff --cached --quiet; then
+            git commit -m "Sync staging into preview-staging"
+            git push origin main
+          fi
