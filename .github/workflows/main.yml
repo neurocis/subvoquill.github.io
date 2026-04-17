@@ -4,6 +4,9 @@ on:
   push:
     branches: [ staging ]
 
+permissions:
+  contents: write
+
 jobs:
   copy-to-subfolder:
     runs-on: ubuntu-latest
@@ -22,20 +25,19 @@ jobs:
 
       - name: Copy staging contents into preview-staging
         run: |
-          # populate a temporary worktree with staging
           git fetch origin staging
           git worktree add /tmp/staging-worktree origin/staging
-
-          # copy files from staging worktree into preview-staging/ on main
-          rsync -a --delete /tmp/staging-worktree/ preview-staging/
-
-          # clean up worktree (optional, but nice)
+          mkdir -p preview-staging
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='preview-staging' \
+            /tmp/staging-worktree/ preview-staging/
           git worktree remove /tmp/staging-worktree --force
 
       - name: Commit and push
         run: |
           git add preview-staging
           if ! git diff --cached --quiet; then
-            git commit -m "Sync staging into main/preview-staging"
+            git commit -m "Sync staging into preview-staging"
             git push origin main
           fi
